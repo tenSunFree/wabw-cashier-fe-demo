@@ -27,6 +27,8 @@ Planned / In progress:
 ## Tech Stack  
 ## 技術棧  
 
+- React + TypeScript  
+  UI framework & types | 前端框架與型別    
 - Vite  
   Dev server & build tool | 開發伺服器與打包工具    
 - Tailwind CSS  
