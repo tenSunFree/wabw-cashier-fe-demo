@@ -28,13 +28,13 @@ Planned / In progress:
 ## 技術棧  
 
 - Vite  
-  Dev server & build tool | 開發伺服器與打包工具  
-- React + TypeScript  
-  UI framework & types | 前端框架與型別  
+  Dev server & build tool | 開發伺服器與打包工具    
 - Tailwind CSS  
   Utility-first styling | 工具類樣式  
 - Radix UI  
   Accessible UI primitives | 可存取性基礎元件  
+- React Router  
+  Client-side routing | 前端路由(SPA)  
 
 ---
 
