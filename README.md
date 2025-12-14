@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# wabw-cashier-fe-demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Introduction  
+## 簡介  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Currently in development.  
+開發中...
 
-## React Compiler
+This project is for learning and technical practice.  
+本專案用於學習與技術練習。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features  
+## 功能  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Planned / In progress:  
+規劃中 / 開發中：
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 
+- 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack  
+## 技術棧  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Vite  
+  Dev server & build tool | 開發伺服器與打包工具  
+- React + TypeScript  
+  UI framework & types | 前端框架與型別  
+- Tailwind CSS  
+  Utility-first styling | 工具類樣式  
+- Radix UI  
+  Accessible UI primitives | 可存取性基礎元件  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Credits  
+## 取材與致謝  
+  
+wabw-cashier-fe  
+https://github.com/niokagi/wabw-cashier-fe  
+
+This project is inspired by Mark-VII and is created for independent learning and demonstration purposes.
+Special thanks to the original author for their open-source contribution.  
+本專案取材自Mark-VII，作為個人獨立學習與示範用途，感謝原作者開源貢獻。
+
+---
+
+## Notes  
+## 備註  
+
+Image resources are for learning and交流 purposes only. Please do not use them for commercial purposes.  
+圖片資源僅供學習交流之用，請勿用於商業用途。  
+
+If there is any infringement, please contact me for removal. Thank you.  
+如有侵權請聯繫刪除，謝謝。
+
+---
+
+## License  
+## 授權  
+
+This repository is intended for learning and demonstration.  
+本專案以學習與示範為主。  
+
+If you plan to open-source it, please choose a license and confirm third-party asset usage rights.  
+若你要正式開源，請補上合適的License，並確認第三方素材的使用授權。
