@@ -43,29 +43,39 @@ function SignInCard({
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-0">
           {/* wrapper */}
           <div className="grid gap-7 px-9 py-3">
+            {/* email */}
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="sr-only">Email</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Email Address"
+                      placeholder="電子郵件地址或電話號碼"
                       {...field}
                       autoComplete="email"
                     />
                   </FormControl>
+                  {/* Blue helper link (e.g., forgot-account page) */}
+                  <Link
+                    to="/auth/forgot-email"
+                    className="text-sm text-blue-600 hover:underline"
+                  >
+                    忘記電子郵件地址？
+                  </Link>
                   <FormMessage />
                 </FormItem>
               )}
             />
+            {/* password */}
+            {/*
             <FormField
               control={form.control}
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel className="sr-only">Password</FormLabel>
                   <FormControl>
                     <Input
                       id="password"
@@ -75,13 +85,11 @@ function SignInCard({
                       autoComplete="current-password"
                     />
                   </FormControl>
-                  {/* <FormDescription>
-                                        This is your Password
-                                    </FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
             />
+            */}
             <Button
               type="submit"
               className="w-full"
