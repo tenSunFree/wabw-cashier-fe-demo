@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router'
 import { toast } from 'sonner'
 import { signInSchema } from '@/schemas/auth.schema'
 import SignInCard from './SignInCard'
+import { FooterLinksBar } from './FooterLinksBar'
 // import { signInSchema, type SignInPayload } from "@/schemas/auth.schema";
 //
 export default function SignInForm({
@@ -47,13 +48,26 @@ export default function SignInForm({
     }
   }
   return (
-    <div className={cn('flex w-full flex-col gap-4', className)} {...props}>
-      <SignInCard form={form} onSubmit={onSubmit} isLoading={isLoading} />
-      <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        <span>Made by Adhim Niokagi - 3124510109</span>
-        <br />
-        <Link to="/privacy-policy">Privacy Policy</Link>.
-      </div>
+    <div
+      className={cn(
+        'as flex w-full flex-col items-center gap-4 md:max-h-[90svh] md:w-[73.5%]',
+        className,
+      )}
+      {...props}
+    >
+      <SignInCard
+        className="w-full md:h-[90svh]"
+        form={form}
+        onSubmit={onSubmit}
+        isLoading={isLoading}
+      />
+      <FooterLinksBar
+        onLanguageClick={() => console.log('language trigger click')}
+        onLanguageChange={(lang) => console.log('change:', lang)}
+        onHelpClick={() => console.log('help')}
+        onPrivacyClick={() => console.log('privacy')}
+        onTermsClick={() => console.log('terms')}
+      />
     </div>
   )
 }

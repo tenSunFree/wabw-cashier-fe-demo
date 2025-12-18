@@ -25,16 +25,18 @@ type SignInForm = ReturnType<typeof useForm<SignInValues>>
 // - Receives loading state (isLoading) to disable the submit button and show a spinner
 // Note: This component does not manage auth or API calls; it only renders the form UI.
 function SignInCard({
+  className,
   form,
   onSubmit,
   isLoading,
 }: {
+  className?: string
   form: ReturnType<typeof useForm<z.infer<typeof signInSchema>>>
   onSubmit: (values: z.infer<typeof signInSchema>) => void | Promise<void>
   isLoading: boolean
 }) {
   return (
-    <Card>
+    <Card className={className}>
       <div className="flex w-full items-start gap-4 bg-[#F0F4F9]">
         <GoogleLoginHeader />
         <SignInCardForm form={form} onSubmit={onSubmit} isLoading={isLoading} />
