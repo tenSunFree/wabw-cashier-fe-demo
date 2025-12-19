@@ -23,7 +23,7 @@ export function GoogleLoginHeader({
         className="h-14 w-14 select-none"
         draggable={false}
       />
-      <h1 className="mt-6 text-4xl font-medium tracking-tight">{title}</h1>
+      <h1 className="text-4xl font-medium tracking-tight">{title}</h1>
       <p className="text-muted-foreground mt-4 text-base">{subtitle}</p>
     </div>
   )

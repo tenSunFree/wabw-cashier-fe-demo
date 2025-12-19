@@ -15,6 +15,7 @@ import { signInSchema } from '@/schemas/auth.schema'
 import { Loader2 } from 'lucide-react'
 import { Input } from '../ui/input'
 import { GoogleLoginHeader } from './GoogleLoginHeader'
+import GuestLoginFooter from './GuestLoginFooter'
 
 type SignInValues = z.infer<typeof signInSchema>
 type SignInForm = ReturnType<typeof useForm<SignInValues>>
@@ -37,9 +38,20 @@ function SignInCard({
 }) {
   return (
     <Card className={className}>
-      <div className="flex w-full items-start gap-4 bg-[#F0F4F9]">
-        <GoogleLoginHeader />
-        <SignInCardForm form={form} onSubmit={onSubmit} isLoading={isLoading} />
+      <div className="flex h-full w-full items-start gap-4 bg-[#11009900]">
+        <div className="flex flex-col">
+          <GoogleLoginHeader />
+          <div className="flex-1" />
+        </div>
+        <div className="flex-1" />
+        <div className="flex h-full flex-col">
+          <div className="flex-1" />
+          <SignInCardForm
+            form={form}
+            onSubmit={onSubmit}
+            isLoading={isLoading}
+          />
+        </div>
       </div>
     </Card>
   )
@@ -56,8 +68,8 @@ function SignInCardForm({
 }) {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-0">
-        <div className="grid gap-7 px-9 py-3">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="bg-[#11558800]">
+        <div className="grid gap-7 py-3">
           <FormField
             control={form.control}
             name="email"
@@ -81,6 +93,7 @@ function SignInCardForm({
               </FormItem>
             )}
           />
+          {/* 
           <Button
             type="submit"
             className="w-full"
@@ -96,13 +109,21 @@ function SignInCardForm({
               'Sign In'
             )}
           </Button>
+          */}
         </div>
+        <GuestLoginFooter
+          learnMoreHref="/help/guest-mode"
+          onCreateAccountClick={() => console.log('create account')}
+          onNext={() => console.log('next')}
+        />
+        {/* 
         <div className="text-center text-sm">
           Don't have an account?{' '}
           <Link to="/auth/sign-up" className="underline underline-offset-4">
             Sign up
           </Link>
         </div>
+        */}
       </form>
     </Form>
   )

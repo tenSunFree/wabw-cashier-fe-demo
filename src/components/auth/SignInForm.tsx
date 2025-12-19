@@ -56,7 +56,7 @@ export default function SignInForm({
       {...props}
     >
       <SignInCard
-        className="w-full md:h-[90svh]"
+        className="w-full md:h-[90svh] p-12"
         form={form}
         onSubmit={onSubmit}
         isLoading={isLoading}
