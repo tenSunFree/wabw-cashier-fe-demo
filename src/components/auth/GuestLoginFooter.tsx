@@ -33,7 +33,7 @@ export default function GuestLoginFooter({
   nextDisabled = false,
 }: GuestLoginFooterProps) {
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full bg-[#22558800] ${className}`}>
       {/* Top notice */}
       <p className="text-sm leading-6 text-neutral-700">
         如果這不是你的電腦，請使用訪客模式以私密方式登入。{' '}

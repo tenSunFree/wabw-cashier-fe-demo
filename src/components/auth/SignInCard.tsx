@@ -16,6 +16,7 @@ import { Loader2 } from 'lucide-react'
 import { Input } from '../ui/input'
 import { GoogleLoginHeader } from './GoogleLoginHeader'
 import GuestLoginFooter from './GuestLoginFooter'
+import { FloatingLabelInput } from './FloatingLabelInput'
 
 type SignInValues = z.infer<typeof signInSchema>
 type SignInForm = ReturnType<typeof useForm<SignInValues>>
@@ -68,8 +69,11 @@ function SignInCardForm({
 }) {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="bg-[#11558800]">
-        <div className="grid gap-7 py-3">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="bg-[#11882200] md:w-95"
+      >
+        <div className="grid gap-7 bg-[#44660000] py-3">
           <FormField
             control={form.control}
             name="email"
@@ -77,9 +81,9 @@ function SignInCardForm({
               <FormItem>
                 <FormLabel className="sr-only">Email</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="電子郵件地址或電話號碼"
+                  <FloatingLabelInput
                     {...field}
+                    label="電子郵件地址或電話號碼"
                     autoComplete="email"
                   />
                 </FormControl>
@@ -111,6 +115,7 @@ function SignInCardForm({
           </Button>
           */}
         </div>
+        <div className="h-8" />
         <GuestLoginFooter
           learnMoreHref="/help/guest-mode"
           onCreateAccountClick={() => console.log('create account')}
