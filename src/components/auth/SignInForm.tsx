@@ -27,6 +27,8 @@ export default function SignInForm({
     },
   })
   async function onSubmit(values: z.infer<typeof signInSchema>) {
+    // console.log('SignInForm, onSubmit, email:', values.email)
+    // console.log('SignInForm, onSubmit, password:', values.password)
     const response = await performSignIn(values)
     if (response.error) {
       toast.error(response.error || 'an unknown error occurred.')
@@ -56,7 +58,7 @@ export default function SignInForm({
       {...props}
     >
       <SignInCard
-        className="w-full md:h-[90svh] p-12"
+        className="w-full p-12 md:h-[90svh]"
         form={form}
         onSubmit={onSubmit}
         isLoading={isLoading}

@@ -20,7 +20,7 @@ export function FloatingLabelInput({ label, className, ...props }: Props) {
         placeholder=" " // Enable:placeholder-shown
         className={cn(
           // Appearance: height, radius, border, padding, and line-height (centers input text)
-          'peer h-14 rounded-[4px] border border-[#777475] bg-transparent px-4 !py-0 text-base !leading-[3.5rem]',
+          'peer h-14 rounded-[4px] border border-[#777475] bg-transparent px-4 !py-0 text-base !leading-[3.5rem] font-semibold',
 
           // Remove shadcn default focus ring styles
           'focus-visible:ring-0 focus-visible:ring-offset-0',
@@ -37,7 +37,7 @@ export function FloatingLabelInput({ label, className, ...props }: Props) {
 
       <label
         className={cn(
-          'bg-background pointer-events-none absolute left-4 px-1 transition-all duration-150',
+          'bg-background pointer-events-none absolute left-4 px-1 font-semibold transition-all duration-150',
 
           // Default (floated) label style
           'top-0 -translate-y-1/2 text-sm text-[#444746]',

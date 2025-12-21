@@ -35,7 +35,7 @@ export default function GuestLoginFooter({
   return (
     <div className={`w-full bg-[#22558800] ${className}`}>
       {/* Top notice */}
-      <p className="text-sm leading-6 text-neutral-700">
+      <p className="text-sm leading-6 font-semibold text-neutral-700">
         如果這不是你的電腦，請使用訪客模式以私密方式登入。{' '}
         <ActionLink
           href={learnMoreHref}
@@ -46,7 +46,7 @@ export default function GuestLoginFooter({
         </ActionLink>
       </p>
       {/* Bottom actions */}
-      <div className="mt-8 flex items-center justify-between">
+      <div className="mt-8 flex items-center bg-[#22558800]">
         <div className="flex-1" />
         <ActionLink
           href={createAccountHref}
@@ -55,15 +55,15 @@ export default function GuestLoginFooter({
         >
           建立帳戶
         </ActionLink>
-        <div className="w-4" />
+        <div className="w-12" />
         <button
           type="button"
           onClick={onNext}
           disabled={nextDisabled}
           className={[
-            'inline-flex items-center justify-center rounded-full px-7 py-2.5',
+            'inline-flex items-center justify-center rounded-full px-6 py-2.5',
             'text-sm font-medium text-white',
-            'bg-[#1a73e8] hover:bg-[#1667d6] active:bg-[#145fc5]',
+            'bg-[#0b57d0] hover:bg-[#1667d6] active:bg-[#145fc5]',
             'focus:ring-2 focus:ring-[#1a73e8] focus:ring-offset-2 focus:outline-none',
             'disabled:cursor-not-allowed disabled:opacity-60',
           ].join(' ')}
@@ -87,7 +87,7 @@ function ActionLink({
   ariaLabel: string
 }) {
   const common =
-    'text-sm font-medium text-[#1a73e8] hover:underline underline-offset-4'
+    'text-sm font-semibold text-[#1a73e8] hover:underline underline-offset-4'
   // Use an anchor when href is provided; otherwise fall back to a button (Google link-button style).
   if (href) {
     return (
