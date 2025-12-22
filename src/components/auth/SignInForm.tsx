@@ -27,13 +27,16 @@ export default function SignInForm({
     },
   })
   async function onSubmit(values: z.infer<typeof signInSchema>) {
-    // console.log('SignInForm, onSubmit, email:', values.email)
-    // console.log('SignInForm, onSubmit, password:', values.password)
+    console.log('SignInForm, onSubmit, email:', values.email)
+    console.log('SignInForm, onSubmit, password:', values.password)
     const response = await performSignIn(values)
+    console.log('SignInForm, onSubmit, response:', response)
     if (response.error) {
+      console.log('SignInForm, onSubmit, error:', response.error)
       toast.error(response.error || 'an unknown error occurred.')
       return
     }
+    console.log('SignInForm, onSubmit, data:', response.data)
     // console.log(response);
     if (response.data && response.data.token) {
       const token = response.data.token
@@ -59,7 +62,6 @@ export default function SignInForm({
     >
       <SignInCard
         className="w-full p-12 md:h-[90svh]"
-        form={form}
         onSubmit={onSubmit}
         isLoading={isLoading}
       />

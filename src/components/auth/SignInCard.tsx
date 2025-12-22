@@ -45,14 +45,12 @@ function SignInCard({
 }) {
   const [step, setStep] = React.useState<Step>('email')
   const [savedEmail, setSavedEmail] = React.useState('')
-
   // Using draft schema keeps step 1 from being blocked by the password field
   const form = useForm<SignInDraftFormValues>({
     resolver: zodResolver(signInDraftSchema),
     defaultValues: { email: '', password: '' },
     mode: 'onSubmit',
   })
-
   return (
     <Card className={className}>
       <div className="flex h-full w-full items-start gap-4 bg-[#11009900]">
@@ -117,7 +115,9 @@ export function SignInCardForm({
 }) {
   const [showPassword, setShowPassword] = React.useState(false)
   const handleNext = async () => {
+    console.log('SignInCardForm, handleNext')
     if (isLoading) return
+    console.log('SignInCardForm, handleNext, step:', step)
     if (step === 'email') {
       const ok = await form.trigger('email')
       if (!ok) return
@@ -125,18 +125,31 @@ export function SignInCardForm({
       setSavedEmail(email)
       // Optional: persist email across refreshes
       // localStorage.setItem('login_email', email)
+      console.log('SignInCardForm, handleNext, email:', email)
+      form.setValue('email', email, {
+        shouldValidate: false,
+        shouldDirty: true,
+      })
       setStep('password')
       // UX: automatically focus password after switching steps
       queueMicrotask(() => form.setFocus('password'))
       return
     }
     // step === 'password'
+    console.log('SignInCardForm, handleNext, savedEmail:', savedEmail)
+    form.setValue('email', savedEmail, {
+      shouldValidate: false,
+      shouldDirty: true,
+    })
     const raw = form.getValues()
+    console.log('SignInCardForm, handleNext, raw:', raw)
     const parsed = signInSchema.safeParse(raw)
+    console.log('SignInCardForm, handleNext, parsed:', parsed)
     if (!parsed.success) {
       applyZodErrorsToRHF(parsed.error.issues, form.setError)
       return
     }
+    console.log('SignInCardForm, handleNext, onSubmit', parsed)
     await onSubmit(parsed.data)
   }
   return (
@@ -177,10 +190,10 @@ export function SignInCardForm({
                     <FormLabel className="sr-only">Password</FormLabel>
                     <FormControl>
                       {/* password input */}
-                      <Input
+                      <FloatingLabelInput
                         {...field}
                         type={showPassword ? 'text' : 'password'}
-                        placeholder="輸入您的密碼"
+                        label="輸入您的密碼"
                         autoComplete="current-password"
                       />
                     </FormControl>

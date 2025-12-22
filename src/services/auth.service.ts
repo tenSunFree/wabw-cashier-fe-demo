@@ -25,14 +25,18 @@ export const signUpService = async (data: SignUpPayload): Promise<SignUpResponse
     }
 }
 
-export const signInService = async (data: SignInPayload): Promise<SignInResponse> => {
-    try {
-        // temporary endpoint api
-        const response = await apiClient.post<SignInResponse>('/auth/sign-in', data);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};
+export const signInService = async (
+  data: SignInPayload,
+): Promise<SignInResponse> => {
+  console.log('signInService, data:', data)
+  try {
+    // temporary endpoint api
+    const response = await apiClient.post<SignInResponse>('/auth/login', data)
+    console.log('signInService, response:', response)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
 
 // export const getProfileService = async () => { ... };

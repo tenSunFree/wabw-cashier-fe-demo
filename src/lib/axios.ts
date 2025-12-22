@@ -8,32 +8,54 @@ const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
+  (config) => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
     }
-);
+    // Print full request info
+    const fullUrl = `${config.baseURL ?? ''}${config.url ?? ''}`
+    console.groupCollapsed(
+      `%c[HTTP Request] ${String(config.method).toUpperCase()} ${fullUrl}`,
+      'font-weight:bold;',
+    )
+    console.log('apiClient, request, method:', config.method)
+    console.log('apiClient, request, url:', fullUrl)
+    console.log('apiClient, request, params:', config.params)
+    console.log('apiClient, request, headers:', config.headers)
+    console.log('apiClient, request, data(body):', config.data)
+    console.groupEnd()
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  },
+)
 
 apiClient.interceptors.response.use(
-    (response) => {
-        return response;
-    },
-    (error) => {
-        if (error.response && error.response.status === 401) {
-            localStorage.removeItem('token');
-            setTimeout(() => {
-                window.location.href = '/auth/sign-in';
-            }, 1300);
-        }
-        return Promise.reject(error);
+  (response) => {
+    const { config } = response
+    const fullUrl = `${config.baseURL ?? ''}${config.url ?? ''}`
+    console.groupCollapsed(
+      `apiClient, response, %c[HTTP Response] ${response.status} ${String(config.method).toUpperCase()} ${fullUrl}`,
+      'font-weight:bold;',
+    )
+    console.log('apiClient, response, status:', response.status)
+    console.log('apiClient, response, headers:', response.headers)
+    console.log('apiClient, response, data(body):', response.data)
+    console.groupEnd()
+    return response
+  },
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      localStorage.removeItem('token')
+      setTimeout(() => {
+        window.location.href = '/auth/sign-in'
+      }, 1300)
     }
-);
+    return Promise.reject(error)
+  },
+)
 
 export default apiClient;
 
