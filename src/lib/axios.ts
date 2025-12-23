@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL,
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
 
 apiClient.interceptors.request.use(
   (config) => {
@@ -47,6 +47,26 @@ apiClient.interceptors.response.use(
     return response
   },
   (error) => {
+    // ✅ Print full error info
+    if (axios.isAxiosError(error)) {
+      const config = error.config
+      const fullUrl = config
+        ? `${config.baseURL ?? ''}${config.url ?? ''}`
+        : '(no config)'
+
+      console.groupCollapsed(
+        `apiClient, response, error, %c[HTTP Error] ${String(config?.method).toUpperCase()} ${fullUrl}`,
+        'font-weight:bold;color:#b91c1c;',
+      )
+      console.log('apiClient, response, error, message:', error.message)
+      console.log('apiClient, response, error, code:', error.code)
+      console.log('apiClient, response, error, request headers:', config?.headers)
+      console.log('apiClient, response, error, request data(body):', config?.data)
+      console.log('apiClient, response, error, response status:', error.response?.status)
+      console.log('apiClient, response, error, response headers:', error.response?.headers)
+      console.log('apiClient, response, error, response data(body):', error.response?.data)
+      console.groupEnd()
+    }
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('token')
       setTimeout(() => {
@@ -57,6 +77,4 @@ apiClient.interceptors.response.use(
   },
 )
 
-export default apiClient;
-
-
+export default apiClient
