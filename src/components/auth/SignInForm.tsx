@@ -19,13 +19,6 @@ export default function SignInForm({
   const { signIn: setAuthToken } = useAuth()
   const { execute: performSignIn, isLoading } = useApi(signInService)
   const navigate = useNavigate()
-  const form = useForm<z.infer<typeof signInSchema>>({
-    resolver: zodResolver(signInSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  })
   async function onSubmit(values: z.infer<typeof signInSchema>) {
     console.log('SignInForm, onSubmit, email:', values.email)
     console.log('SignInForm, onSubmit, password:', values.password)
@@ -38,8 +31,8 @@ export default function SignInForm({
     }
     console.log('SignInForm, onSubmit, data:', response.data)
     // console.log(response);
-    if (response.data && response.data.token) {
-      const token = response.data.token
+    if (response.data && response.data.accessToken) {
+      const token = response.data.accessToken
       if (response.successMessage) {
         toast.success(response.successMessage)
       }

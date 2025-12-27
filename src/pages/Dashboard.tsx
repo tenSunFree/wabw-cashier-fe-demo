@@ -52,16 +52,16 @@ export default function Dashboard() {
         );
     }
 
-    if (error) {
-        return (
-            <SidebarInset>
-                <SiteHeader />
-                <div className="p-8 text-center text-destructive">
-                    Error: {error.message}
-                </div>
-            </SidebarInset>
-        );
-    }
+    // if (error) {
+    //     return (
+    //         <SidebarInset>
+    //             <SiteHeader />
+    //             <div className="p-8 text-center text-destructive">
+    //                 Error: {error.message}
+    //             </div>
+    //         </SidebarInset>
+    //     );
+    // }
 
     const kpiStats = statsData?.kpi || { totalRevenueToday: '0', totalOrdersToday: '0' };
     const topCategory = statsData?.revenueByCategory?.[0] || null;

@@ -20,6 +20,7 @@ const CUSTOMER_STORAGE_KEY = 'cashierCustomerName';
 const PAYMENT_STORAGE_KEY = 'cashierPaymentMethod';
 // 
 export default function CashierPage() {
+    console.log('CashierPage');
     const queryClient = useQueryClient();
     const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [cart, setCart] = useState<CartItem[]>(() => {
