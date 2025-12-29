@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
 import MainLayout from '@/layouts/MainLayout'
 import AuthLayout from '@/layouts/AuthLayout'
-import SignIn from '@/pages/auth/SignIn'
-import SignUp from '@/pages/auth/SignUp'
+import SignInPage from '@/pages/auth/SignInPage'
+import SignUp from '@/pages/auth/SignUpPage'
 import ProtectedRoutes from './ProtectedRoutes'
 import PublicRoute from './PublicRoute'
 import CashierPage from '@/pages/CashierPage'
@@ -30,7 +30,7 @@ export default function AppRoutes() {
         <Route element={<PublicRoute />}>
           <Route path="/auth" element={<AuthLayout />}>
             <Route index element={<Navigate to="/auth/sign-in" replace />} />
-            <Route path="sign-in" element={<SignIn />} />
+            <Route path="sign-in" element={<SignInPage />} />
             <Route path="sign-up" element={<SignUp />} />
           </Route>
         </Route>

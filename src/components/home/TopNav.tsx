@@ -1,4 +1,5 @@
 import { LayoutGrid } from 'lucide-react'
+import homeMore from '@/assets/icons/home_more.png'
 
 export function TopNav() {
   return (
@@ -44,7 +45,13 @@ export function TopNav() {
             className="inline-flex h-9 w-9 items-center justify-center rounded-full hover:bg-neutral-100"
             aria-label="Google apps"
           >
-            <LayoutGrid className="h-5 w-5" />
+            {/* <LayoutGrid className="h-5 w-5" /> */}
+            <img
+              src={homeMore}
+              alt="Google"
+              className="h-5 w-5 select-none"
+              draggable={false}
+            />
           </button>
 
           <div

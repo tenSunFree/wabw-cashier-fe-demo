@@ -48,7 +48,7 @@ function SignInCard({
   // Using draft schema keeps step 1 from being blocked by the password field
   const form = useForm<SignInDraftFormValues>({
     resolver: zodResolver(signInDraftSchema),
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: 'john@mail.com', password: 'changeme' },
     mode: 'onSubmit',
   })
   return (
