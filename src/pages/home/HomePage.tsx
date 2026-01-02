@@ -1,4 +1,4 @@
-import SearchBar from '@/components/common/SearchBar'
+import SearchBar from '@/components/home/SearchBar'
 import { GoogleLogo } from '@/components/home/GoogleLogo'
 import { SearchActions } from '@/components/home/SearchActions'
 import { TopNav } from '@/components/home/TopNav'
@@ -10,12 +10,15 @@ export default function HomePage() {
     <div className="flex w-full flex-col bg-[#11223300] text-neutral-900">
       <TopNav />
       <main className="flex flex-1 flex-col items-center">
-        <div className="w-full max-w-5xl px-6 pt-16">
-          <GoogleLogo />
-          <div className="mt-8">
+        <div className="w-full max-w-5xl bg-[#44556600] px-6 pt-[2px]">
+          {/* 往右 1.5rem，可改 pl-4 / pl-8 */}
+          <div className="pl-[50px]">
+            <GoogleLogo />
+          </div>
+          <div className="mt-[20px]">
             <SearchBar />
           </div>
-          <div className="mt-6">
+          <div className="mt-[24px]">
             <SearchActions />
           </div>
         </div>
