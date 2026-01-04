@@ -10,15 +10,15 @@ export default function HomePage() {
     <div className="flex w-full flex-col bg-[#11223300] text-neutral-900">
       <TopNav />
       <main className="flex flex-1 flex-col items-center">
-        <div className="w-full max-w-5xl bg-[#44556600] px-6 pt-[2px]">
+        <div className="w-full max-w-5xl bg-[#44556600] px-6">
           {/* 往右 1.5rem，可改 pl-4 / pl-8 */}
           <div className="pl-[50px]">
             <GoogleLogo />
           </div>
-          <div className="mt-[20px]">
+          <div className="mt-[14px]">
             <SearchBar />
           </div>
-          <div className="mt-[24px]">
+          <div className="mt-[29px]">
             <SearchActions />
           </div>
         </div>

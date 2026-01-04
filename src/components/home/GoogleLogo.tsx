@@ -6,7 +6,7 @@ export function GoogleLogo() {
       <img
         src={googleLogo2026}
         alt="Google"
-        className="h-[100px] w-auto"
+        className="h-[110px] w-auto"
         draggable={false}
       />
     </div>

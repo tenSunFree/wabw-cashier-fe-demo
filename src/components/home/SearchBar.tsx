@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Mic, Camera, Sparkles } from 'lucide-react'
+import searchMicrophone from '@/assets/icons/search_microphone.png'
+import searchCamera from '@/assets/icons/search_camera.png'
+import searchAiMode from '@/assets/icons/search_ai_mode.png'
 import searchAdd from '@/assets/icons/search_add.png'
+import { ImgBox } from '@/components/common/ImgBox'
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -17,13 +20,13 @@ export default function SearchBar() {
         <Button
           type="button"
           variant="ghost"
-          className="h-10 w-10 rounded-full p-0"
+          className="h-8 w-8 rounded-full p-0"
           aria-label="Add"
         >
-          <img
+          <ImgBox
             src={searchAdd}
             alt="Add search contextual action"
-            className="h-5 w-5"
+            size={16}
           />
         </Button>
         {/* Search input */}
@@ -38,28 +41,28 @@ export default function SearchBar() {
           type="button"
           variant="ghost"
           size="icon"
-          className="h-10 w-10 rounded-full"
+          className="mr-[8px] h-8 w-8 rounded-full"
           aria-label="Voice"
         >
-          <Mic className="h-5 w-5" />
+          <ImgBox src={searchMicrophone} alt="Voice" size={20} />
         </Button>
         {/* Camera button */}
         <Button
           type="button"
           variant="ghost"
           size="icon"
-          className="h-10 w-10 rounded-full"
+          className="mr-[10px] h-8 w-8 rounded-full"
           aria-label="Camera"
         >
-          <Camera className="h-5 w-5" />
+          <ImgBox src={searchCamera} alt="Camera" size={20} />
         </Button>
         {/* AI mode button */}
         <Button
           type="button"
           variant="secondary"
-          className="h-10 rounded-full px-4"
+          className="h-[31px] rounded-full px-[10px] font-semibold"
         >
-          <Sparkles className="mr-2 h-4 w-4" />
+          <ImgBox src={searchAiMode} alt="AI 模式" size={18} />
           AI 模式
         </Button>
       </div>
