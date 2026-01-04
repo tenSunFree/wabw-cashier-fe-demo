@@ -19,13 +19,16 @@ interface AuthContextValue {
   signOut: () => void
 }
 
-export const AuthContext = createContext<AuthContextValue | undefined>(undefined)
+export const AuthContext = createContext<AuthContextValue | undefined>(
+  undefined,
+)
 
 interface AuthProviderProps {
   children: ReactNode
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
+  // localStorage.removeItem('token')
   const [token, setToken] = useState<string | null>(null)
   console.log('AuthProvider rendered, token:', token)
   const [user, setUser] = useState<User | null>(null)

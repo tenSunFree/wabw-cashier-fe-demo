@@ -44,7 +44,7 @@ export default function SearchBar() {
           className="mr-[8px] h-8 w-8 rounded-full"
           aria-label="Voice"
         >
-          <ImgBox src={searchMicrophone} alt="Voice" size={20} />
+          <ImgBox src={searchMicrophone} alt="Voice" width={16} height={20} />
         </Button>
         {/* Camera button */}
         <Button

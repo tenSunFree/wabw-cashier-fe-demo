@@ -1,4 +1,3 @@
-import { SidebarMenu } from '@/components/common/SidebarMenu'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { Outlet } from 'react-router'
 import { Toaster } from 'sonner'
