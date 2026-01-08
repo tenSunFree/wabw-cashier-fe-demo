@@ -28,7 +28,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  // localStorage.removeItem('token')
+  localStorage.removeItem('token')
   const [token, setToken] = useState<string | null>(null)
   console.log('AuthProvider rendered, token:', token)
   const [user, setUser] = useState<User | null>(null)

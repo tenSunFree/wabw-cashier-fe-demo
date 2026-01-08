@@ -1,18 +1,8 @@
-import { SidebarProvider } from '@/components/ui/sidebar'
 import { Outlet } from 'react-router'
 import { Toaster } from 'sonner'
 // import { OrderDetailsSidebar } from "@/components/order/OrderDetailsSidebar"
 
 export default function MainLayout() {
   console.log('MainLayout')
-  return (
-    <SidebarProvider>
-      {/* left */}
-      <Toaster position="top-right" richColors />
-      {/* <SidebarMenu /> */}
-      <Outlet />
-      {/* right */}
-      {/* moved to cashierpage.tsx/component, for usability */}
-    </SidebarProvider>
-  )
+  return <Outlet />
 }

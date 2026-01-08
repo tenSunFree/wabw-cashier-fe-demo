@@ -5,7 +5,6 @@ import SignInPage from '@/pages/auth/SignInPage'
 import SignUp from '@/pages/auth/SignUpPage'
 import ProtectedRoutes from './ProtectedRoutes'
 import PublicRoute from './PublicRoute'
-import ReportsPage from '@/pages/ReportsPage'
 import NotFound from '@/pages/NotFound'
 import HomePage from '@/pages/home/HomePage'
 
@@ -17,7 +16,6 @@ export default function AppRoutes() {
           <Route path="/" element={<MainLayout />}>
             {/* <Route index element={<CashierPage />} /> */}
             <Route index element={<HomePage />} />
-            <Route path="reports" element={<ReportsPage />} />
           </Route>
         </Route>
         <Route element={<PublicRoute />}>

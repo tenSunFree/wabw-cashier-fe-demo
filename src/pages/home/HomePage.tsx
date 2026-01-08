@@ -7,7 +7,7 @@ import { Footer } from '@/components/home/Footer'
 export default function HomePage() {
   console.log('HomePage')
   return (
-    <div className="flex w-full flex-col bg-[#11223300] text-neutral-900">
+    <div className="flex min-h-dvh w-full flex-col bg-[#11223300] text-neutral-900">
       <TopNav />
       <main className="flex flex-1 flex-col items-center">
         <div className="w-full max-w-5xl bg-[#44556600] px-6">
