@@ -1,11 +1,9 @@
-import { Outlet } from "react-router"
-import { Toaster } from "sonner"
+import { Outlet } from 'react-router'
 
 export default function AuthLayout() {
-    return (
-        <main>
-            <Toaster position="top-right" richColors />
-            <Outlet />
-        </main>
-    )
+  return (
+    <main>
+      <Outlet />
+    </main>
+  )
 }

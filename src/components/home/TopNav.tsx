@@ -1,4 +1,3 @@
-import { LayoutGrid } from 'lucide-react'
 import homeMore from '@/assets/icons/home_more.png'
 
 export function TopNav() {

@@ -33,13 +33,14 @@ export default function SignInForm({
     // console.log(response);
     if (response.data && response.data.accessToken) {
       const token = response.data.accessToken
-      if (response.successMessage) {
-        toast.success(response.successMessage)
-      }
+      toast.success(`successMessage: ${response.successMessage}`)
+      // if (response.successMessage) {
+      //   toast.success(response.successMessage)
+      // }
       setTimeout(() => {
         setAuthToken(token)
         navigate('/', { replace: true })
-      }, 1050)
+      }, 1000)
     } else {
       toast.error(response.error || 'an unknown error occurred')
       // toast.error('an unknown error occurred')
