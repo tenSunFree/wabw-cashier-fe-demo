@@ -5,22 +5,32 @@
 ## Introduction  
 ## 簡介  
 
-Currently in development.  
-開發中...
+wabw-cashier-fe  
+https://github.com/niokagi/wabw-cashier-fe  
+  
+google login  
+https://takeout.google.com/  
 
 This project is for learning and technical practice.  
 本專案用於學習與技術練習。
 
 ---
 
+## Preview  
+## 預覽  
+
+<p align="left">
+  <img src="https://i.postimg.cc/vTD0bPQk/111.png" width="460"/>
+</p> 
+
+<p align="left">
+  <img src="https://i.postimg.cc/7hpnDwtY/222.png" width="460"/>
+</p> 
+
+---
+
 ## Features  
 ## 功能  
-
-Planned / In progress:  
-規劃中 / 開發中：
-
-- 
-- 
 
 ---
 
@@ -45,6 +55,9 @@ Planned / In progress:
   
 wabw-cashier-fe  
 https://github.com/niokagi/wabw-cashier-fe  
+  
+google login  
+https://takeout.google.com/  
 
 This project is inspired by wabw-cashier-fe and is created for independent learning and demonstration purposes.
 Special thanks to the original author for their open-source contribution.  
